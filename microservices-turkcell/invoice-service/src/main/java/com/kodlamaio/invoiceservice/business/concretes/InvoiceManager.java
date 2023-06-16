@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
-@Service //once time of creation?
+@Service // This annotation is used to mark the class as a service provider.
 @AllArgsConstructor
 public class InvoiceManager implements InvoiceService
 {

@@ -29,21 +29,21 @@ public class MaintenanceBusinessRules
         if(!repository.existsById(id))
         {
             //throw new BusinessException(Messages.Maintenance.NotExists);
-            throw new BusinessException("Messages.Maintenance.NotExists");
+            throw new BusinessException("MAINTENANCE_NOT_EXISTS");
         }
     }
 
     public void checkIfCarIsNotUnderMaintenance(UUID carId)
     {
         if(!repository.existsByCarIdAndIsCompletedIsFalse(carId))
-            throw new BusinessException("Messages.Maintenance.NotExists");
+            throw new BusinessException("CAR_IS_NOT_UNDER_MAINTENANCE");
         //throw new BusinessException(Messages.Maintenance.CarNotExists);
     }
 
     public void checkIfCarIsUnderMaintenance(UUID carId)
     {
         if(repository.existsByCarIdAndIsCompletedIsFalse(carId))
-            throw new BusinessException("Messages.Maintenance.NotExists");
+            throw new BusinessException("CAR_IS_UNDER_MAINTENANCE");
         //throw new BusinessException(Messages.Maintenance.CarExists);
     }
 

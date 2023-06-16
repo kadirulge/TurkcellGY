@@ -12,7 +12,4 @@ public interface InvoiceService
     List<GetAllInvoicesResponse> getAll();
     GetInvoiceResponse getById(UUID id);
     void add(Invoice invoice);
-    //UpdateInvoiceResponse update(UUID id, UpdateInvoiceRequest request);
-    //void delete(UUID id);
-    //void deleteByRentalId(int id);
 }

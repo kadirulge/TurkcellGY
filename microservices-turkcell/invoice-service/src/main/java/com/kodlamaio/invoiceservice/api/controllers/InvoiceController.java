@@ -1,14 +1,13 @@
-package com.kodlamaio.invoiceservice.controller;
+package com.kodlamaio.invoiceservice.api.controllers;
 
 import com.kodlamaio.invoiceservice.business.abstracts.InvoiceService;
 import com.kodlamaio.invoiceservice.business.dto.responses.get.GetAllInvoicesResponse;
-import com.kodlamaio.invoiceservice.entities.Invoice;
-import com.kodlamaio.invoiceservice.repository.InvoiceRepository;
+import com.kodlamaio.invoiceservice.business.dto.responses.get.GetInvoiceResponse;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @AllArgsConstructor
@@ -20,5 +19,10 @@ public class InvoiceController {
     public List<GetAllInvoicesResponse> getAll()
     {
         return service.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public GetInvoiceResponse getById(@PathVariable UUID id) {
+        return service.getById(id);
     }
 }

@@ -14,7 +14,7 @@ import java.util.UUID;
 @Setter
 public class UpdateInvoiceResponse
 {
-    private String id;
+    private UUID id;
     private String cardHolder;
     private String modelName;
     private String brandName;

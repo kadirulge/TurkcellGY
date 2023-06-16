@@ -24,7 +24,9 @@ public class RentalConsumer
     )
     public void consume(RentalPaymentCreatedEvent event)
     {
+        System.out.println(event.getBrandName()+event.getModelName()+event.getPlate());
         var invoice = mapper.forRequest().map(event, Invoice.class);
+        System.out.println(invoice.getBrandName()+invoice.getModelName());
         service.add(invoice);
         log.info("Rental created event consumed {}", event);
     }
